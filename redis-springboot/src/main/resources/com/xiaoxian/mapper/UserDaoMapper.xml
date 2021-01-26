@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoxian.dao.UserDao">
+
+    <cache type="com.xiaoxian.cache.RedisCache"/>
+
+    <select id="findAll" resultType="com.xiaoxian.entity.User">
+        select id,name,age,bir
+        from t_user
+    </select>
+
+    <select id="findOne" parameterType="java.lang.String" resultType="com.xiaoxian.entity.User">
+        select id,name,age,bir
+        from t_user
+        where
+        id = #{id}
+    </select>
+
+    <delete id="deleteById" parameterType="java.lang.String">
+        delete from t_user
+        where id = #{id}
+    </delete>
+
+</mapper>

@@ -32,6 +32,8 @@ public class TestSet {
         String name1 = jedis.srandmember("name");
         System.out.println(name1);
 
+
+
         jedis.close();
     }
 }
