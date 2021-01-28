@@ -18,4 +18,8 @@ public interface UserDao {
     User findOne(String id);
 
     int deleteById(String id);
+
+    int save(User user);
+
+    int update(User user);
 }
